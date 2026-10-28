@@ -67,6 +67,28 @@ npm run build
 
 The production files will be generated in the `dist` folder.
 
+
+## 📸 Screenshots
+
+### Desktop — Laptop
+![BookNest on laptop](public/screenshots/book%20nest-laptop.png)
+
+### Mobile — Phone
+![BookNest on mobile](public/screenshots/book%20nest-mobile.png)
+
+## 📱 Responsive Mobile Navigation
+
+- Added a responsive hamburger menu for mobile screens.
+- Users can open and close the navigation menu.
+- The menu closes after a navigation link is selected.
+- Added accessibility attributes: `aria-label`, `aria-expanded`, and `aria-controls`.
+
+## 🆕 Recent Updates
+
+- Improved responsive navigation for mobile devices.
+- Added desktop and mobile screenshots.
+
+
 ## 👩‍💻 Author
 
 **Saro Nelly Hornella Vanessa**

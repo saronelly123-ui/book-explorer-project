@@ -212,18 +212,31 @@ let isLoading = false
 let apiError = ''
 
 app.innerHTML = `
-  <header class="navbar">
-    <a class="brand" href="./index.html">
-      <span class="brand-icon">B</span> BookNest
-    </a>
+  
+<header class="navbar">
+  <a class="brand" href="./index.html">
+    <span class="brand-icon">B</span> BookNest
+  </a>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#books">Explore Books</a>
-      <a href="./favorites.html">Favorites</a>
-      <a href="./about.html">About</a>
-    </nav>
-  </header>
+  <button
+    class="menu-toggle"
+    id="menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="main-nav"
+  >
+    ☰
+  </button>
+
+  <nav id="main-nav">
+    <a href="#home">Home</a>
+    <a href="#books">Explore Books</a>
+    <a href="./favorites.html">Favorites</a>
+    <a href="./about.html">About</a>
+  </nav>
+</header>
+
 
   <main>
     <section class="hero" id="home">
@@ -291,6 +304,29 @@ app.innerHTML = `
     <p>Made for curious minds and book lovers. © 2026</p>
   </footer>
 `
+
+const menuToggle = document.querySelector('#menu-toggle')
+const mainNav = document.querySelector('#main-nav')
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('nav-open')
+
+  menuToggle.setAttribute('aria-expanded', String(isOpen))
+  menuToggle.setAttribute(
+    'aria-label',
+    isOpen ? 'Close navigation menu' : 'Open navigation menu'
+  )
+  menuToggle.textContent = isOpen ? '✕' : '☰'
+})
+
+mainNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('nav-open')
+    menuToggle.setAttribute('aria-expanded', 'false')
+    menuToggle.setAttribute('aria-label', 'Open navigation menu')
+    menuToggle.textContent = '☰'
+  })
+})
 
 const grid = document.querySelector('#book-grid')
 const status = document.querySelector('#status')
