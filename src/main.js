@@ -250,8 +250,7 @@ app.innerHTML = `
       </div>
 
       <div class="hero-photo">
-        <img
-          src="book-explorer/image/my-photo.jpg"
+        <img src="/book-explorer/image/my-photo.jpg"
           alt="A person enjoying a book while reading"
           loading="eager"
         >
