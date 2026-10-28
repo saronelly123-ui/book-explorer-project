@@ -1,6 +1,6 @@
 
 import './style.css'
-import { fetchBooks } from './fetchBooks.js'
+import { fetchBooks } from './fetchbooks.js'
 
 const app = document.querySelector('#app')
 
