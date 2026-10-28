@@ -1,0 +1,45 @@
+
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.hero {
+  min-height: 390px;
+  background:
+    linear-gradient(90deg, rgb(40 23 17 / 94%), rgb(40 23 17 / 45%)),
+    url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1800&q=85")
+      center 50% / cover;
+}
+
+.book-cover {
+  height: 220px;
+  width: 100%;
+  object-fit: contain;
+  background: #fff7ed;
+}
+
+button,
+a,
+input,
+select {
+  transition: all 180ms ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #fb923c;
+  outline-offset: 3px;
+}
