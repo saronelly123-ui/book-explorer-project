@@ -115,7 +115,7 @@ button {
       rgba(95, 90, 83, 0.82),
       rgba(95, 88, 79, 0.82)
     ),
-    url("/book-explorer/image/books-background.jpg")center / cover no-repeat;
+   url("/image/books-background.jpg")center / cover no-repeat;
 }
 
 .eyebrow {
