@@ -60,9 +60,16 @@ function loadFavorites() {
   grid.innerHTML = ''
 
   if (favorites.length === 0) {
-    status.textContent = 'No saved books yet. Explore books and add your favorites!'
-    return
-  }
+  status.textContent = 'No saved books yet. '
+
+  const exploreLink = document.createElement('a')
+  exploreLink.href = './index.html#books'
+  exploreLink.textContent = 'Explore books and add your favorites.'
+  exploreLink.className = 'back-link'
+
+  status.append(exploreLink)
+  return
+}
 
   status.textContent = `${favorites.length} saved book(s)`
 
