@@ -484,9 +484,23 @@ async function searchBooksFromApi() {
 
 searchForm.addEventListener('submit', event => {
   event.preventDefault()
+
+  const query = searchInput.value.trim()
+
+  if (!query) {
+    searchInput.focus()
+    searchInput.setCustomValidity('Please enter a book title or author.')
+    searchInput.reportValidity()
+    return
+  }
+
+  searchInput.setCustomValidity('')
   searchBooksFromApi()
 })
 
+searchInput.addEventListener('input', () => {
+  searchInput.setCustomValidity('')
+})
 retryButton.addEventListener('click', searchBooksFromApi)
 
 sortSelect.addEventListener('change', () => {
